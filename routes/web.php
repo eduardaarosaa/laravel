@@ -32,6 +32,8 @@ Route::get(
 
 Route::get('/', 'Site\SiteController@index');
   
-Route::get('/contato', 'SiteController@contato');
+Route::get('/part', 'Site\SiteController@part');
+
+Route::get('/part1', 'Site\SiteController@part1');
 
 Route::get('/categoria/{id}', 'SiteController@categoria');

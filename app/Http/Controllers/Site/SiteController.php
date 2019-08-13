@@ -8,12 +8,12 @@ use App\Http\Controllers\Controller;
 class SiteController extends Controller
 {
     public function index(){
-        return '    Home do site';
+        return view('cadastro-pj');
     }
-    public function contato(){
-        return 'Home do contato';
+    public function part(){
+        return view('cadastro-pj-part');
     }
-    public function categoria($id){
-        return "Listagem de categoria {$id}";
+    public function part1(){
+        return view('cadastro-pj-part1');
     }
 }
