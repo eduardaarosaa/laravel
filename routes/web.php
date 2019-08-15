@@ -30,10 +30,12 @@ Route::get(
 );
 /* Exemplo de rota com parametro*/
 
-Route::get('/', 'Site\SiteController@index');
+Route::get('/', 'Site\SiteController@index')->name('index');
   
-Route::get('/part', 'Site\SiteController@part');
+Route::get('/part', 'Site\SiteController@part')->name('part');
 
-Route::get('/part1', 'Site\SiteController@part1');
+Route::get('/part1', 'Site\SiteController@part1')->name('part1');
+
+Route::post('/cadastro', 'Site\SiteController@cadastro')->name('cadastro');
 
 Route::get('/categoria/{id}', 'SiteController@categoria');
