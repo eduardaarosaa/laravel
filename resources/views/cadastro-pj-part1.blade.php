@@ -8,7 +8,7 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h3 class="text-center">Informações dos Sócios</h3>
-                    <form method="POST" action="{{route('cadastro')}}">
+                    <!-- <form method="POST" action="{{route('cadastro')}}"> -->
                     {{ csrf_field() }}
 
                         <div class="form-group">

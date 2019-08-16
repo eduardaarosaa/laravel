@@ -7,9 +7,9 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h3 class="text-center">Cadastro de PJ</h3>
-                    <form>
-                   
-                        
+                    <form method="POST" action="{{route('cadastro_empresa')}}">
+                    {{ csrf_field() }}
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">E-mail*</label>
                             <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">
@@ -82,7 +82,7 @@
                             </div>
                         </div>
 
-                        <a href="{{route('part')}}">Próxima página </a>
+                        <button type="submit" class="btn btn-danger">Cadastrar</button>
                     </form>
                 </div>
             </div>

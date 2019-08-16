@@ -8,7 +8,8 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h3 class="text-center">Informações da empresa</h3>
-                    <form>
+                    <form method="POST" action="{{route('cadastro_info')}}">
+                         {{ csrf_field() }}
                         <div class="form-group">
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Contrato social *</b></p>
@@ -57,10 +58,7 @@
                             </div>
                         </div>
                 </div>
-                
-    
-
-                <a href="{{route('part1')}}">Próxima página </a>
+                <button type="submit" class="btn btn-danger">Cadastrar</button>
                 </form>
             </div>
         </div>
