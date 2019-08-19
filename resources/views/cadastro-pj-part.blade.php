@@ -9,12 +9,12 @@
                 <div class="container">
                     <h3 class="text-center">Informações da empresa</h3>
                     <form method="POST" action="{{route('cadastro_info')}}">
-                         {{ csrf_field() }}
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Contrato social *</b></p>
-                                <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+
+                                <input type="file" id="inputeste2" name="file1" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -23,8 +23,8 @@
                         <div class="form-group">
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Cartão CNPJ - Receita Federal</b></p>
-                                <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+
+                                <input type="file" id="inputeste2" name="file2" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -39,8 +39,8 @@
                         <div class="form-group">
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Balanço Patrimonial</b></p>
-                                <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+
+                                <input type="file" id="inputeste2" name="file3" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -50,21 +50,21 @@
                         <div class="form-group">
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Balancete</b></p>
-                                <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+
+                                <input type="file" id="inputeste2" name="file4" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
                             </div>
                         </div>
+                        <button type="submit" class="btn btn-danger">Cadastrar</button>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-danger">Cadastrar</button>
-                </form>
             </div>
         </div>
     </div>
 </div>
-</div>
+
 
 
 @endsection

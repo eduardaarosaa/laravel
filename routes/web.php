@@ -36,7 +36,7 @@ Route::get('/part', 'Site\SiteController@part')->name('part');
 
 Route::get('/part1', 'Site\SiteController@part1')->name('part1');
 
-Route::get('/cadastro', 'Site\SiteController@cadastro_info')->name('cadastro_info');
+Route::post('/cadastro_empresa', 'Site\SiteController@cadastro_info')->name('cadastro_info');
 
 // Route::post('/cadastro', 'Site\SiteController@cadastro')->name('cadastro');
 
