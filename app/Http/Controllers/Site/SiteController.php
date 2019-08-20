@@ -65,12 +65,20 @@ class SiteController extends Controller
     {
         $dataForm = $request->except('_token');
 
-        $file1 = ['file1'];
-
-        $request->file->move(public_path('/upload'));
-
+        //$request->file->move(public_path('/upload'));
+   
+        // $images=array();
+        // if($files=$request->file('files')){
+        // foreach($files as $file){
+        // $name=$file->getClientOriginalName();
+        // $file->move('image',$name);
+        // $images[]=$name;
 
         dd($dataForm);
+      
+       // }
+       
+    }
       // $create = DB::table('company_info')->insert($dataForm);
 
         // if ($create && $create == true) {
@@ -79,12 +87,25 @@ class SiteController extends Controller
         // } else {
 
         //     return redirect()->back();
-        // }
-
-       
-    }
-}
-               
-   
+        // }  
 
         // $inserir = DB::table('company_info')->insert($dataForm);
+
+    public function cadastro_pf(){
+        
+        return view('cadastro_pf');
+    }
+
+    public function pf_date(){
+        //pegar os dados para o insert
+    }
+
+    public function doc_pf(){
+
+        return view('doc_pf');
+    }
+
+    public function cadastro_doc(){
+        //pegar os documentos para o insert.
+    }
+        }

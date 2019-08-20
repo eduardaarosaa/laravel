@@ -38,6 +38,10 @@ Route::get('/part1', 'Site\SiteController@part1')->name('part1');
 
 Route::post('/cadastro_empresa', 'Site\SiteController@cadastro_info')->name('cadastro_info');
 
+Route::get('/cadastro_pf', 'Site\SiteController@cadastro_pf')->name('cadastro_pf');
+
+Route::get('/doc_pf', 'Site\SiteController@doc_pf')->name('cadastro_pf');
+
 // Route::post('/cadastro', 'Site\SiteController@cadastro')->name('cadastro');
 
 Route::post('/cadastro', 'Site\SiteController@cadastro_empresa')->name('cadastro_empresa');

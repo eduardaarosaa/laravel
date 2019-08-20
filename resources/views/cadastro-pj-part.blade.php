@@ -8,13 +8,13 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h3 class="text-center">Informações da empresa</h3>
-                    <form method="POST" action="{{route('cadastro_info')}}">
+                    <form method="POST" action="{{route('cadastro_info')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Contrato social *</b></p>
 
-                                <input type="file" id="inputeste2" name="file1" multiple />
+                                <input type="file" id="inputeste2" name="files[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -24,7 +24,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Cartão CNPJ - Receita Federal</b></p>
 
-                                <input type="file" id="inputeste2" name="file2" multiple />
+                                <input type="file" id="inputeste2" name="files[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -40,7 +40,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Balanço Patrimonial</b></p>
 
-                                <input type="file" id="inputeste2" name="file3" multiple />
+                                <input type="file" id="inputeste2" name="files[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -51,7 +51,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Balancete</b></p>
 
-                                <input type="file" id="inputeste2" name="file4" multiple />
+                                <input type="file" id="inputeste2" name="files[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
