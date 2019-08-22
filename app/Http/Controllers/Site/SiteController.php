@@ -63,49 +63,66 @@ class SiteController extends Controller
     }
     public function cadastro_info(Request $request)
     {
-        $dataForm = $request->except('_token');
+        $faturamento = $_POST['faturamento'];
+        //print_r ($faturamento);
 
-        //$request->file->move(public_path('/upload'));
-   
-        // $images=array();
-        // if($files=$request->file('files')){
-        // foreach($files as $file){
-        // $name=$file->getClientOriginalName();
-        // $file->move('image',$name);
-        // $images[]=$name;
+        // Define o valor default para a variável que contém o nome da imagem 
+        $nameFile = null;
 
-        dd($dataForm);
-      
-       // }
        
+        $loop = count($request->image);
+
+        //print_r($loop);
+        for ($i = 0; $i < $loop; $i++) {
+
+            // var_dump($request->image[$i]);
+
+            // Define um aleatório para o arquivo baseado no timestamps atual
+            $name = uniqid(date('HisYmd'));
+
+            // Recupera a extensão do arquivo
+            $extension = $request->image[$i]->extension();
+
+            // Define finalmente o nome
+            $nameFile = "{$name}.{$extension}";
+            
+
+            $upload = $request->image[$i]->storeAs('upload', $nameFile);
+
+            // Se tiver funcionado o arquivo foi armazenado em storage/app/public/upload/nomedinamicoarquivo.extensao
+         
+
+            $array = explode(",", $upload);
+
+               
+            var_dump($array);
+
+
+
+
+
+        }
     }
-      // $create = DB::table('company_info')->insert($dataForm);
 
-        // if ($create && $create == true) {
+    public function cadastro_pf()
+    {
 
-        //     return redirect()->route('part1');
-        // } else {
-
-        //     return redirect()->back();
-        // }  
-
-        // $inserir = DB::table('company_info')->insert($dataForm);
-
-    public function cadastro_pf(){
-        
         return view('cadastro_pf');
     }
 
-    public function pf_date(){
+    public function pf_date()
+    {
         //pegar os dados para o insert
     }
 
-    public function doc_pf(){
+    public function doc_pf()
+    {
 
         return view('doc_pf');
     }
 
-    public function cadastro_doc(){
+    public function cadastro_doc()
+    {
         //pegar os documentos para o insert.
     }
-        }
+}

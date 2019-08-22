@@ -12,35 +12,36 @@
                         {{ csrf_field() }}
                         <div class="form-group">
                             <div id="dynamicDiv2">
+                                <br>
                                 <p id="message"><b>Contrato social *</b></p>
 
-                                <input type="file" id="inputeste2" name="files[]" multiple />
+                                <input type="file" id="inputeste2" name="image[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
                             </div>
                         </div>
-                        <div class="form-group">
+                            <div class="form-group">
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Cartão CNPJ - Receita Federal</b></p>
 
-                                <input type="file" id="inputeste2" name="files[]" multiple />
+                                <input type="file" id="inputeste2" name="image[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
                             </div>
                         </div>
-                        <div class="form-group">
+                            <div class="form-group">
                             <label for="exampleInputPassword1">Faturamento*</label>
                             <input type="text" class="form-control money" name="faturamento" id="exampleInputPassword1" placeholder="">
                             <small>Dos últimos 12 meses </small>
-                        </div>
+                        </div> 
 
                         <div class="form-group">
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Balanço Patrimonial</b></p>
 
-                                <input type="file" id="inputeste2" name="files[]" multiple />
+                                <input type="file" id="inputeste2" name="image[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -51,12 +52,12 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Balancete</b></p>
 
-                                <input type="file" id="inputeste2" name="files[]" multiple />
+                                <input type="file" id="inputeste2" name="image[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
                             </div>
-                        </div>
+                        </div> 
                         <button type="submit" class="btn btn-danger">Cadastrar</button>
                     </form>
                 </div>

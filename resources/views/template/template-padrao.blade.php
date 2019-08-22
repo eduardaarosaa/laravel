@@ -20,14 +20,14 @@
 
 <body>
     <nav class="navbar navbar-light bg-danger">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{route('index')}}">
             <img src="img/logo.jpg" width="50">
         </a>
     </nav>
     <br>
 
     @yield('padrao')
-    <footer class="bg-danger">
+    <footer class="bg-danger footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 color-footer">
