@@ -73,7 +73,7 @@ class SiteController extends Controller
 
             foreach($files as $file):
                 Storage::put($file->getClientOriginalName(),file_get_contents($file));
-                var_dump($file->fileName);
+                var_dump($file);
 
             endforeach;
 
