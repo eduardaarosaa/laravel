@@ -8,7 +8,7 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h3 class="text-center">Informações da empresa</h3>
-                    <form method="POST" action="{{route('cadastro_info')}}" enctype="multipart/form-data">
+                    <form method="POST" id="upload" action="{{route('cadastro_info')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <div id="dynamicDiv2">
@@ -55,7 +55,7 @@
                                 <input type="file" id="inputeste2" name="image[]" multiple />
 
 
-                                <iframe style="display:none" name="iframe"></iframe>
+                                <iframe style="display:none" id="ok" name="iframe"></iframe>
                             </div>
                         </div> 
                         <button type="submit" class="btn btn-danger">Cadastrar</button>
@@ -65,7 +65,25 @@
         </div>
     </div>
 </div>
-
-
-
 @endsection
+<script>
+    var form = document.getElementById('upload');
+    var request = new XMLHttpRequest();
+
+    form.addEventListener('submit', function(e)){
+        e.preventeDefault();
+        var formdata = new FormData(form);
+
+        request.open('post', '/upload');
+        request.addEventListener("load", transferComplete);
+        request.send(formdata);
+    }
+
+    function transferComplete(data){
+      response = JSON.parse(data.currentTarget.response);
+      if(response.success){
+          document.getElementById('ok') = "Ok";
+      }
+    }
+</script>
+

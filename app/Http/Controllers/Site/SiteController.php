@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use DB;
+use Storage;
+
 use App\Http\Controllers\Controller;
 use App\Models\Site\cadastro;
+
 
 class SiteController extends Controller
 {
@@ -63,45 +67,42 @@ class SiteController extends Controller
     }
     public function cadastro_info(Request $request)
     {
-        $faturamento = $_POST['faturamento'];
-        //print_r ($faturamento);
+        $files = $request->file('image');
 
-        // Define o valor default para a variável que contém o nome da imagem 
-        $nameFile = null;
+        if(!empty($files)):
 
-       
-        $loop = count($request->image);
+            foreach($files as $file):
+                Storage::put($file->getClientOriginalName(),file_get_contents($file));
+                var_dump($file->fileName);
 
-        //print_r($loop);
-        for ($i = 0; $i < $loop; $i++) {
+            endforeach;
 
-            // var_dump($request->image[$i]);
+        endif;
 
-            // Define um aleatório para o arquivo baseado no timestamps atual
-            $name = uniqid(date('HisYmd'));
-
-            // Recupera a extensão do arquivo
-            $extension = $request->image[$i]->extension();
-
-            // Define finalmente o nome
-            $nameFile = "{$name}.{$extension}";
-            
-
-            $upload = $request->image[$i]->storeAs('upload', $nameFile);
-
-            // Se tiver funcionado o arquivo foi armazenado em storage/app/public/upload/nomedinamicoarquivo.extensao
-         
-
-            $array = explode(",", $upload);
-
-               
-            var_dump($array);
+        return \Response::json(array('success' => true));
 
 
+        // $faturamento = $_POST['faturamento'];
+        // //print_r ($faturamento);
+
+        // //Define o valor default para a variável que contém o nome da imagem 
+        // $nameFile = null;
 
 
+        // $loop = count($request->image);
 
-        }
+
+        // for ($i = 0; $i < $loop; $i++) {
+
+        //     $name = uniqid(date('HisYmd'));
+        //     $extension = $request->image[$i]->extension();
+
+        //     $nameFile = "{$name}.{$extension}";
+
+        //     $upload = ($request->image[$i]->storeAs('upload', $nameFile));
+
+           
+        // }
     }
 
     public function cadastro_pf()
