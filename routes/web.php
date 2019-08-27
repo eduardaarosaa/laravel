@@ -47,3 +47,5 @@ Route::get('/doc_pf', 'Site\SiteController@doc_pf')->name('cadastro_pf');
 Route::post('/cadastro', 'Site\SiteController@cadastro_empresa')->name('cadastro_empresa');
 
 // Route::post('/categoria/{id}', 'SiteController@categoria');
+Auth::routes(['verify' => true]);
+Route::get('/home', 'HomeController@index')->name('home');
