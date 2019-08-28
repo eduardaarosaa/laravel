@@ -25,4 +25,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function email()
+    {
+        $id = 1;
+        $user = User::where('id', $id)->first();
+
+        Mail::to($user->email)->send(new SendMailUser($user));
+    }
 }

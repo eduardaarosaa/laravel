@@ -49,3 +49,5 @@ Route::post('/cadastro', 'Site\SiteController@cadastro_empresa')->name('cadastro
 // Route::post('/categoria/{id}', 'SiteController@categoria');
 Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/send', 'EmailController@send');

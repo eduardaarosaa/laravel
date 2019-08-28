@@ -67,35 +67,35 @@ class SiteController extends Controller
     }
     public function cadastro_info(Request $request)
     {
-        // $files = $request->file('image');
+        $files = $request->file('image');
 
-        // if(!empty($files)):
+        if(!empty($files)):
 
-        //     foreach($files as $file):
-        //         Storage::put($file->getClientOriginalName(),file_get_contents($file));
-        //         var_dump($file);
+            foreach($files as $file):
+                Storage::put($file->getClientOriginalName(),file_get_contents($file));
+                var_dump($file);
 
-        //     endforeach;
+            endforeach;
 
-        // endif;
+        endif;
 
-        // return \Response::json(array('success' => true));
+        return \Response::json(array('success' => true));
 
-        $faturamento = $_POST['faturamento'];
-        $nameFile = null;
+        // $faturamento = $_POST['faturamento'];
+        // $nameFile = null;
 
-        $loop = count($request->image);
+        // $loop = count($request->image);
 
-        for ($i = 0; $i < $loop; $i++) {
+        // for ($i = 0; $i < $loop; $i++) {
 
-            $name = uniqid(date('HisYmd'));
-            $extension = $request->image[$i]->extension();
-            $nameFile = [];
-            $nameFile = "{$name}.{$extension}";
-            $upload = array($request->image[$i]->storeAs('upload', $nameFile));
-            var_dump($upload);
+        //     $name = uniqid(date('HisYmd'));
+        //     $extension = $request->image[$i]->extension();
+        //     $nameFile = [];
+        //     $nameFile = "{$name}.{$extension}";
+        //     $upload = array($request->image[$i]->storeAs('upload', $nameFile));
+        //     var_dump($upload);
 
-        }
+        // }
     }
 
     public function cadastro_pf()
