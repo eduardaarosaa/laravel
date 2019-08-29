@@ -13,6 +13,7 @@ use App\Models\Site\cadastro;
 
 class SiteController extends Controller
 {
+
     private $cadastro;
 
     public function __construct(Cadastro $cadastro)
@@ -67,36 +68,38 @@ class SiteController extends Controller
     }
     public function cadastro_info(Request $request)
     {
-        $files = $request->file('image');
+    //     foreach($request->file('filenames') as $key => $file)
 
-        if(!empty($files)):
+    //     {
 
-            foreach($files as $file):
-                Storage::put($file->getClientOriginalName(),file_get_contents($file));
-                var_dump($file);
+    //         $name=$file->getClientOriginalName();
 
-            endforeach;
+    //         $file = $request->file('filenames', $key);
+    //         $file->move(public_path().'/files/', $name);  
 
-        endif;
+    //         $data[] = $name;  
+         
+           
+    //    }
+        $files = $request->file('filenames');
+         foreach ($files as $file){
+        $filename = time().'.'.$file->getClientOriginalExtension();
 
-        return \Response::json(array('success' => true));
+        //$location = public_path('uploads/'.$filename);
 
-        // $faturamento = $_POST['faturamento'];
-        // $nameFile = null;
+        $file->move(public_path().'/files/', $filename);
 
-        // $loop = count($request->image);
+        $filename_arr = [];
+         array_push($filename_arr, $filename);
+        $filename = json_encode($filename_arr);
 
-        // for ($i = 0; $i < $loop; $i++) {
-
-        //     $name = uniqid(date('HisYmd'));
-        //     $extension = $request->image[$i]->extension();
-        //     $nameFile = [];
-        //     $nameFile = "{$name}.{$extension}";
-        //     $upload = array($request->image[$i]->storeAs('upload', $nameFile));
-        //     var_dump($upload);
-
-        // }
+       // $upload->filename = $filename;
     }
+      
+
+     }
+
+    
 
     public function cadastro_pf()
     {
