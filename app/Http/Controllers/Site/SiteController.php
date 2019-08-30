@@ -68,39 +68,41 @@ class SiteController extends Controller
     }
     public function cadastro_info(Request $request)
     {
-    //     foreach($request->file('filenames') as $key => $file)
+        $faturamento = $_POST['faturamento'];
+        $images = array();
+        if ($files = $request->file('images')) {
 
-    //     {
+            foreach ($files as $key => $file) {
+                $name = $file->getClientOriginalName();
+                $extension = $file->getClientOriginalExtension();
+                $new = rand();
+                $file->move('image', $new . '.' . $extension);
+                $images[] = $new . '.' . $extension;
+            }
+            // print_r($images);
+            $contrato = ($images[0]);
+            $cnpj = ($images[1]);
+            $balanco = ($images[2]);
+            $balancete = ($images[3]);
 
-    //         $name=$file->getClientOriginalName();
 
-    //         $file = $request->file('filenames', $key);
-    //         $file->move(public_path().'/files/', $name);  
+            $create = DB::table('company_info')->insert(["file1" => $contrato, "faturamento" => $faturamento,
+             "file2"=> $cnpj, "file3"=> $balanco, "file4"=>$balancete]);
 
-    //         $data[] = $name;  
-         
-           
-    //    }
-        $files = $request->file('filenames');
-         foreach ($files as $file){
-        $filename = time().'.'.$file->getClientOriginalExtension();
 
-        //$location = public_path('uploads/'.$filename);
+            if ($create == true) {
 
-        $file->move(public_path().'/files/', $filename);
+                return redirect()->route('part1');
+            } else {
 
-        $filename_arr = [];
-         array_push($filename_arr, $filename);
-        $filename = json_encode($filename_arr);
+                return redirect()->back();
+            }
+        }
 
-       // $upload->filename = $filename;
+        // return redirect()->back()->with('message', 'Successfully Save Your Image file.');
+
+
     }
-      
-
-     }
-
-    
-
     public function cadastro_pf()
     {
 

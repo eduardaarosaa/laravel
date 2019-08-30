@@ -8,14 +8,14 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h3 class="text-center">Informações da empresa</h3>
-                    <form method="POST" id="filenames" name="filenames" action="{{route('cadastro_info')}}" enctype="multipart/form-data">
+                    <form method="POST" id="upload" action="{{route('cadastro_info')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <div id="dynamicDiv2">
                                 <br>
                                 <p id="message"><b>Contrato social *</b></p>
 
-                                <input type="file" id="inputeste2" name="contrato" multiple />
+                                <input type="file" id="inputeste2" name="images[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -25,7 +25,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Cartão CNPJ - Receita Federal</b></p>
 
-                                <input type="file" id="inputeste2" name="filenames[]" multiple />
+                                <input type="file" id="inputeste2" name="images[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -41,7 +41,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Balanço Patrimonial</b></p>
 
-                                <input type="file" id="inputeste2" name="filenames[]" multiple />
+                                <input type="file" id="inputeste2" name="images[]" multiple />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -52,7 +52,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Balancete</b></p>
 
-                                <input type="file" id="inputeste2" name="filenames[]" multiple />
+                                <input type="file" id="inputeste2" name="images[]" multiple />
 
 
                                 <iframe style="display:none" id="ok" name="iframe"></iframe>
