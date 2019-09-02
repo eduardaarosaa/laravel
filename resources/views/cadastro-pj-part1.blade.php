@@ -8,11 +8,11 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h3 class="text-center">Informações dos Sócios</h3>
-                    <form method="POST" action="{{route('index')}}">
+                    <form method="POST" action="{{route('cadastroFinalizado')}}" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
                         <div class="form-group">
-                        <input type="hidden" name="csrf-token" value="{{ csrf_token() }}">
+               
                             <label for="exampleInputEmail1">Nome do sócio responsável pelas transações*
                             </label>
                             <input type="text" class="form-control" name="name.socio" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite nome do sócio">
@@ -20,7 +20,7 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">CPF do sócio responsável pelas transações*
                             </label>
-                            <input type="text" class="form-control cpf" name="cpf.socio1" id="exampleInputPassword1" placeholder="Digite o CPF do sócio">
+                            <input type="text" class="form-control cpf" name="cpf.socio" id="exampleInputPassword1" placeholder="Digite o CPF do sócio">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">É pessoa exposta politicamente (PEP)?*</label>
@@ -56,7 +56,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Documento de identidade sócio com foto*</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -66,7 +66,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Selfie (autorretrato) do sócio com documento*</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -76,7 +76,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Comprovante de endereço do sócio*</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -86,7 +86,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Procuração*</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -141,7 +141,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Documento de identidade do Sócio 1</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -151,7 +151,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Selfie (autorretrato) do Sócio 1 com documento</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -161,7 +161,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Comprovante de endereço do Sócio 1</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -215,7 +215,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Documento de identidade do Sócio 2</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -225,7 +225,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Selfie (autorretrato) do Sócio 2 com documento</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -235,7 +235,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Comprovante de endereço do Sócio 2</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -289,7 +289,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Documento de identidade do Sócio 3</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -299,7 +299,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Selfie (autorretrato) do Sócio 3 com documento</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -309,7 +309,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Comprovante de endereço do Sócio 3</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="file[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
