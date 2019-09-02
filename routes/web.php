@@ -40,7 +40,7 @@ Route::post('/cadastro_empresa', 'Site\SiteController@cadastro_info')->name('cad
 
 Route::get('/cadastro_pf', 'Site\SiteController@cadastro_pf')->name('cadastro_pf');
 
-Route::get('/doc_pf', 'Site\SiteController@doc_pf')->name('cadastro_pf');
+Route::get('/doc_pf', 'Site\SiteController@doc_pf')->name('doc_pf');
 
 // Route::post('/cadastro', 'Site\SiteController@cadastro')->name('cadastro');
 
@@ -53,3 +53,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/send', 'EmailController@send');
 
 Route::post('/cadastroFinalizado', 'Site\SiteController@cadastroSocio')->name('cadastroFinalizado');
+
+Route::get('/index', 'Site\SiteController@inicio')->name('inicio');
+
+Route::post('/pf_date', 'Site\SiteController@pf_date')->name('pf_date');
+
+Route::post('pf_doc', 'Site\SiteController@cadastro_doc')->name('pf_doc');

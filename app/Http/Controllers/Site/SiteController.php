@@ -178,9 +178,20 @@ class SiteController extends Controller
         return view('cadastro_pf');
     }
 
-    public function pf_date()
+    public function pf_date(Request $request)
     {
-        //pegar os dados para o insert
+        $dataForm = $request->except('_token', 'rua', 'numero', 'bairro', 'cidade', 'cep', 'estado');
+       // dd($dataForm);
+        $insert = DB::table('company_fisica')->insert($dataForm);
+
+        $dataForm1 = $request->except('_token', 'email', 'nome', 'cpf', 'pep', 'partido');
+        $create = DB::table('company_adress_pf')->insert($dataForm1);
+
+        if($insert && $create == true){
+            return view('doc_pf');
+        }else{
+            echo 'error';
+        }
     }
 
     public function doc_pf()
@@ -189,8 +200,45 @@ class SiteController extends Controller
         return view('doc_pf');
     }
 
-    public function cadastro_doc()
+    public function cadastro_doc(Request $request)
     {
-        //pegar os documentos para o insert.
+       $intermediador = $_POST['intermediador'];
+       $telefone = $_POST['telefone'];
+
+       $images = array();
+        if ($files = $request->file('images')) {
+
+            foreach ($files as $key => $file) {
+                $name = $file->getClientOriginalName();
+                $extension = $file->getClientOriginalExtension();
+                $new = rand();
+                $file->move('pessoaFisica', $new . '.' . $extension);
+                $images[] = $new . '.' . $extension;
+            }
+
+            $documento = ($images[0]);
+            $selfie = ($images[1]);
+            $comprovante = ($images[2]);
+            
+            $create = DB::table('company_doc_fis')->insert(["documento" => $documento, "selfie" => $selfie,
+            "comprovante"=> $comprovante, "intermediador"=> $intermediador, "telefone"=>$telefone
+            ]);
+
+
+           if ($create == true) {
+
+               return view('cadastroFinalizado');
+           } else {
+
+               return redirect()->back();
+           }
+
+        }
+      
+
+    }
+
+    public function inicio(){
+        return view('index');
     }
 }

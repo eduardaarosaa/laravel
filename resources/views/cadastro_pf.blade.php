@@ -8,7 +8,7 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h3 class="text-center">Cadastro de Cliente PF</h3>
-                    <!-- <form method="POST" action="{{route('cadastro_empresa')}}"> -->
+                    <form method="POST" action="{{route('pf_date')}}">
                     {{ csrf_field() }}
 
                         <div class="form-group">
@@ -17,15 +17,15 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Nome Completo*</label>
-                            <input type="text" class="form-control" name="razao" id="exampleInputPassword1" placeholder="Digite a razão social">
+                            <input type="text" class="form-control" name="nome" id="exampleInputPassword1" placeholder="Digite seu nome">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">CPF*</label>
-                            <input type="text" class="form-control cpf" name="cpf" id="exampleInputPassword1" name='cnpj' placeholder="Digite seu CNPJ">
+                            <input type="text" class="form-control cpf" name="cpf" id="exampleInputPassword1" name='cnpj' placeholder="Digite seu cpf">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">É pessoa exposta politicamente (PEP)?*</label>
-                            <select class="form-control" name="tipo.socio" id="exampleFormControlSelect1">
+                            <select class="form-control" name="pep" id="exampleFormControlSelect1">
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
     
@@ -33,7 +33,7 @@
                         </div>
                         <div>
                         <label for="exampleFormControlSelect1">Faz parte de algum partido político ou associação política?*</label>
-                            <select class="form-control" name="tipo.socio" id="exampleFormControlSelect1">
+                            <select class="form-control" name="partido" id="exampleFormControlSelect1">
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
     
