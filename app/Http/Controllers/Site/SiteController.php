@@ -34,20 +34,7 @@ class SiteController extends Controller
     {
         return view('cadastro-pj-part1');
     }
-    public function cadastro(Request $request)
-    {
 
-        // $dataForm = $request->all();
-        //     dd($dataForm);
-        // // $insert = $this->cadastro->create($dataForm);
-
-        // // if($insert == true){
-        // //     return "Ok";
-        // // }else{
-        // //     return "false";
-        // // }       
-
-    }
     public function cadastro_empresa(Request $request)
     {
 

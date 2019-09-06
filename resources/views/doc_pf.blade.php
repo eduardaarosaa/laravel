@@ -40,26 +40,12 @@
                                 <iframe style="display:none" name="iframe"></iframe>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Negociações serão feitas através de um intermediador?*
-                            </label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="intermediador" id="exampleRadios1" value="sim">
-                                <label class="form-check-label" for="exampleRadios1">
-                                    Sim
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="intermediador" id="exampleRadios2" value="nao">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Não </label>
-                            </div>
-                        </div>
+                        
                         <br>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Telefone do responsável pelas transações*
+                            <label for="exampleInputEmail1">Contato *
                             </label>
-                            <input type="text" class="form-control phone_with_ddd" name="telefone" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite o telefone">
+                            <input type="text" class="form-control phone_with_ddd" name="telefone" placeholder="Digite o telefone" required>
                         </div>
 
                     

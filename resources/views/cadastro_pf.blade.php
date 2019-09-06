@@ -13,19 +13,19 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">E-mail*</label>
-                            <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">
+                            <input type="email" class="form-control" name="email" required placeholder="Digite seu e-mail">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Nome Completo*</label>
-                            <input type="text" class="form-control" name="nome" id="exampleInputPassword1" placeholder="Digite seu nome">
+                            <input type="text" class="form-control" name="nome" required placeholder="Digite seu nome">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">CPF*</label>
-                            <input type="text" class="form-control cpf" name="cpf" id="exampleInputPassword1" name='cnpj' placeholder="Digite seu cpf">
+                            <input type="text" class="form-control cpf" name="cpf" required  placeholder="Digite seu cpf">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">É pessoa exposta politicamente (PEP)?*</label>
-                            <select class="form-control" name="pep" id="exampleFormControlSelect1">
+                            <select class="form-control"  name="pep" id="exampleFormControlSelect1" required>
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
     
@@ -33,7 +33,7 @@
                         </div>
                         <div>
                         <label for="exampleFormControlSelect1">Faz parte de algum partido político ou associação política?*</label>
-                            <select class="form-control" name="partido" id="exampleFormControlSelect1">
+                            <select class="form-control" name="partido" id="exampleFormControlSelect1" required>
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
     
@@ -44,13 +44,13 @@
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Logradouro*</label>
-                                    <input type="text" class="form-control" name="rua" id="rua" placeholder="Digite seu logradouro">
+                                    <input type="text" class="form-control" name="rua" id="rua" placeholder="Digite seu logradouro" required>
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Número*</label>
-                                    <input type="number" class="form-control" name="numero" id="exampleInputPassword1" placeholder="Digite seu número">
+                                    <input type="number" class="form-control" name="numero" placeholder="Digite seu número" required>
                                 </div>
                             </div>
                         </div>
@@ -58,13 +58,13 @@
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Bairro*</label>
-                                    <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite seu bairro">
+                                    <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite seu bairro" required>
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">CEP*</label>
-                                    <input type="text" class="form-control cep" id="cep" name="cep" placeholder="Digite seu cep">
+                                    <input type="text" class="form-control cep" id="cep" name="cep" placeholder="Digite seu cep" required>
                                 </div>
                             </div>
                         </div>

@@ -15,7 +15,7 @@
                                 <br>
                                 <p id="message"><b>Contrato social *</b></p>
 
-                                <input type="file" id="inputeste2" name="images[]" multiple />
+                                <input type="file" id="inputeste2" name="images[]" multiple required/>
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -33,13 +33,13 @@
                         </div>
                             <div class="form-group">
                             <label for="exampleInputPassword1">Faturamento*</label>
-                            <input type="text" class="form-control money" name="faturamento" id="exampleInputPassword1" placeholder="">
+                            <input type="text" class="form-control money" name="faturamento" required placeholder="Digite o faturamento">
                             <small>Dos últimos 12 meses </small>
                         </div> 
 
                         <div class="form-group">
                             <div id="dynamicDiv2">
-                                <p id="message"><b>Balanço Patrimonial</b></p>
+                                <p id="message"><b>Balanço Patrimonial ou IRPJ</b></p>
 
                                 <input type="file" id="inputeste2" name="images[]" multiple />
 
@@ -50,9 +50,9 @@
 
                         <div class="form-group">
                             <div id="dynamicDiv2">
-                                <p id="message"><b>Balancete</b></p>
+                                <p id="message"><b>Comprovante de endereço da empresa*</b></p>
 
-                                <input type="file" id="inputeste2" name="images[]" multiple />
+                                <input type="file" id="inputeste2" name="images[]" multiple  required/>
 
 
                                 <iframe style="display:none" id="ok" name="iframe"></iframe>
