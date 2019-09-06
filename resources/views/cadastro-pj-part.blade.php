@@ -39,7 +39,7 @@
 
                         <div class="form-group">
                             <div id="dynamicDiv2">
-                                <p id="message"><b>Balanço Patrimonial ou IRPJ</b></p>
+                                <p id="message"><b>Balanço Patrimonial ou IRPJ *</b></p>
 
                                 <input type="file" id="inputeste2" name="images[]" multiple />
 

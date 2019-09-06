@@ -15,12 +15,12 @@
                
                             <label for="exampleInputEmail1">Nome do sócio responsável pelas transações*
                             </label>
-                            <input type="text" class="form-control" name="name.socio" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite nome do sócio">
+                            <input type="text" class="form-control" name="name.socio" id="exampleInputEmail1" required placeholder="Digite nome do sócio">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">CPF do sócio responsável pelas transações*
                             </label>
-                            <input type="text" class="form-control cpf" name="cpf.socio" id="exampleInputPassword1" placeholder="Digite o CPF do sócio">
+                            <input type="text" class="form-control cpf" name="cpf.socio" required placeholder="Digite o CPF do sócio">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">É pessoa exposta politicamente (PEP)?*</label>
@@ -37,7 +37,7 @@
                             </div>
 
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label for="exampleInputPassword1">Faz parte de algum partido político ou associação política?*
                             </label>
                             <div class="form-check">
@@ -56,7 +56,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Documento de identidade sócio com foto*</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);"  required />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -66,7 +66,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Selfie (autorretrato) do sócio com documento*</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);"  required/>
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -76,7 +76,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Comprovante de endereço do sócio*</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);"  required />
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -86,7 +86,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Procuração*</b></p>
                                 <!-- <img style="min-height:120;min-width:200;max-height:120px;" id="image"/><br> -->
-                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);" />
+                                <input type="file" id="inputeste2" name="images[]" multiple onchange="updatepicture(this);"  required/>
                                
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -319,7 +319,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Telefone do responsável pelas transações*
                             </label>
-                            <input type="text" class="form-control phone_with_ddd" name="phone.resp" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu telefone">
+                            <input type="text" class="form-control phone_with_ddd" name="phone.resp"  required placeholder="Digite seu telefone">
                         </div>
 
                         <button type="submit" class="btn btn-danger">Cadastrar</button>

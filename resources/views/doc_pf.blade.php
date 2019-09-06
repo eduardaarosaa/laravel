@@ -13,7 +13,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Documento de identidade com foto*</b></p>
 
-                                <input type="file" id="inputeste2" name="images[]" multiple />
+                                <input type="file" id="inputeste2" name="images[]" multiple required/>
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -23,7 +23,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Selfie (autorretrato) com documento*</b></p>
 
-                                <input type="file" id="inputeste2" name="images[]" multiple />
+                                <input type="file" id="inputeste2" name="images[]" multiple required />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>
@@ -34,7 +34,7 @@
                             <div id="dynamicDiv2">
                                 <p id="message"><b>Comprovante de endereço*</b></p>
 
-                                <input type="file" id="inputeste2" name="images[]" multiple />
+                                <input type="file" id="inputeste2" name="images[]" multiple required />
 
 
                                 <iframe style="display:none" name="iframe"></iframe>

@@ -72,13 +72,13 @@
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Cidade*</label>
-                                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite sua cidade">
+                                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Estado*</label>
-                                    <input type="text" class="form-control" id="uf" name="estado" placeholder="Digite seu estado">
+                                    <input type="text" class="form-control" id="uf" name="estado" placeholder="Digite seu estado" required>
                                 </div>
                             </div>
                         </div>
