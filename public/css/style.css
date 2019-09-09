@@ -1,5 +1,5 @@
 body{
-    background-color: #ccc;
+    /* background-color: #ccc; */
 }
 h3{
     color:#A30C10!important;
@@ -10,4 +10,7 @@ h3{
 }
 .bg-danger{
     color:#fff!important;
+}
+.jumbotron{
+    background-color: #fff!important;
 }
